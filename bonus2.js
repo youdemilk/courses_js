@@ -1,23 +1,14 @@
 /**
- * @param {string[]} A
- * @return {string[]}
+ * @param {number[]} nums
+ * @param {number} val
+ * @return {number}
  */
-var commonChars = function(A) {
-    let arr = [];
-    if (A.length === 0) {
-        return "";
-    }
-
-    for (let i = 0; i < A[0].length; i++) {
-        for (let j = 0; j < A.length; j++) {
-            if (A[j][i] === A[0][i]) {
-                console.log(A[j][i])
-                arr.push(A[j][i])
-            }
+var removeElement = function(nums, val) {
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] === val) {
+            // console.log(nums)
+            nums.splice(i, 1);
         }
-    }
-    
-    return arr;  
+    }  
+    return nums.length
 };
-
-console.log(commonChars(["bella","label","roller"]))
